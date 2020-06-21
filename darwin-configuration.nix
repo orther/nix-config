@@ -32,9 +32,9 @@ in
   environment.systemPackages =
     with pkgs; [
       # adoptopenjdk-hotspot-bin-11
-      awscli
-      aws-iam-authenticator
-      aws-sam-cli
+      # awscli
+      # aws-iam-authenticator
+      # aws-sam-cli
       bat
       # cabal-install
       # cabal2nix
@@ -82,10 +82,10 @@ in
       coreutils
     ];
 
-    fonts.enableFontDir = true;
-    fonts.fonts = with pkgs; [
-      source-code-pro
-    ];
+  fonts.enableFontDir = true;
+  fonts.fonts = with pkgs; [
+    source-code-pro
+  ];
 
   environment.variables = {
     EDITOR = "vim";
