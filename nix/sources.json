@@ -1,0 +1,62 @@
+{
+    "comma": {
+        "branch": "master",
+        "description": null,
+        "homepage": null,
+        "owner": "Shopify",
+        "repo": "comma",
+        "rev": "4a62ec17e20ce0e738a8e5126b4298a73903b468",
+        "sha256": "0n5a3rnv9qnnsrl76kpi6dmaxmwj1mpdd2g0b4n1wfimqfaz6gi1",
+        "type": "tarball",
+        "url": "https://github.com/Shopify/comma/archive/4a62ec17e20ce0e738a8e5126b4298a73903b468.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "f73bf8d584148677b01859677a63191c31911eae",
+        "sha256": "0jlmrx633jvqrqlyhlzpvdrnim128gc81q5psz2lpp2af8p8q9qs",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/f73bf8d584148677b01859677a63191c31911eae.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nix-direnv": {
+        "branch": "master",
+        "description": "A fast, persistent use_nix implementation for direnv [maintainer=@Mic92] ",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "nix-direnv",
+        "rev": "59def08e9c7fd13f49673ec286ca31d0eff070d7",
+        "sha256": "0dqw3ggnk945w94d8j2x1dis2zfq3d9kyq07qxyp3mcxkx2ffziz",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/nix-direnv/archive/59def08e9c7fd13f49673ec286ca31d0eff070d7.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "master",
+        "description": "Nix Packages collection",
+        "homepage": null,
+        "owner": "NixOs",
+        "repo": "nixpkgs",
+        "rev": "f17888bf0f3537be86d01ee61e7ae58903162dac",
+        "sha256": "0xddnwa5117dcngpihf66kxs1z9gn3cjd5qr913ya4cng27iii07",
+        "type": "tarball",
+        "url": "https://github.com/NixOs/nixpkgs/archive/f17888bf0f3537be86d01ee61e7ae58903162dac.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "pre-commit-hooks": {
+        "branch": "master",
+        "description": "Seamless integration of https://pre-commit.com git hooks with Nix.",
+        "homepage": "",
+        "owner": "cachix",
+        "repo": "pre-commit-hooks.nix",
+        "rev": "15a0b96c1cc06a25d8bf57529230947540a77b81",
+        "sha256": "0k36i41hmagj9lmx1wjpvzjyxwqbk19s119wgbqsghkqncprvjna",
+        "type": "tarball",
+        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/15a0b96c1cc06a25d8bf57529230947540a77b81.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
