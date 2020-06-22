@@ -10,12 +10,13 @@ let
   username = builtins.getEnv "USER";
   homeDir = "/Users/${username}";
   nix-direnv = import sources.nix-direnv {};
-in {
+in
+{
   imports = [
-     <home-manager/nix-darwin>
-     ## TODO: have this imported by the machine config and move below config into setup/machine/etc.
-     ./setup/darwin
-   ];
+    <home-manager/nix-darwin>
+    ## TODO: have this imported by the machine config and move below config into setup/machine/etc.
+    ./setup/darwin
+  ];
 
   home-manager.useUserPackages = true;
 
@@ -166,7 +167,4 @@ in {
     keep-derivations = true
   '';
 
-  imports = [
-    
-  ];
 }
