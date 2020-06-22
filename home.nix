@@ -11,6 +11,10 @@ let
 
 in
 {
+  imports = [
+    ./home/doom-emacs/default.nix
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.bat.enable = true;
