@@ -40,10 +40,10 @@ in
       # cabal2nix
       cachix
       # cloudflared
-      curl
+      # curl
       # dep
       direnv
-      # emacs
+      emacs
       git
       # ghc
       fzf
@@ -80,6 +80,20 @@ in
       nixpkgs-fmt
       source-code-pro
       coreutils
+
+      # added after initial setup
+      curlFull
+      exa
+      # glance
+      htop
+      mosh
+      ranger
+      gnupg
+      readline
+      ripgrep
+      tig
+      tree
+      tmux
     ];
 
   fonts.enableFontDir = true;
