@@ -12,6 +12,13 @@ let
   nix-direnv = import sources.nix-direnv {};
 in
 {
+
+  # With an existing `nix.nixPath` entry:
+  nix.nixPath = [
+    # Add the following to existing entries.
+    "nixpkgs-overlays=${homeDir}/.nixpgks/overlays/"
+  ];
+
   imports = [
     <home-manager/nix-darwin>
     ## TODO: have this imported by the machine config and move below config into setup/machine/etc.
