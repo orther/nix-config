@@ -25,9 +25,9 @@
     #darwin-rebuild = "darwin-rebuild --option extra-builtins-file ${<dotfiles/setup/common/secrets/extra-builtins.nix>}";
   };
   
-  nix.extraOptions = ''
-    builders = @/etc/nix/machines
-  '';
+  ##nix.extraOptions = ''
+  ##  builders = @/etc/nix/machines
+  ##'';
 
   ##networking.knownNetworkServices = ["Wi-Fi" "Bluetooth PAN" "Thunderbolt Bridge"];
   ##networking.dns = ["1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001"];
