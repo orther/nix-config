@@ -11,10 +11,19 @@ let
   homeDir = "/Users/${username}";
   nix-direnv = import sources.nix-direnv {};
 in
-
 {
 
-  imports = [ <home-manager/nix-darwin> ];
+  # With an existing `nix.nixPath` entry:
+  nix.nixPath = [
+    # Add the following to existing entries.
+    "nixpkgs-overlays=${homeDir}/.nixpgks/overlays/"
+  ];
+
+  imports = [
+    <home-manager/nix-darwin>
+    ## TODO: have this imported by the machine config and move below config into setup/machine/etc.
+    ./setup/darwin
+  ];
 
   home-manager.useUserPackages = true;
 
@@ -75,7 +84,6 @@ in
       # hie
       comma
       wget
-      pinentry_mac
       niv.niv
       nixpkgs-fmt
       source-code-pro
@@ -88,11 +96,9 @@ in
       htop
       mosh
       ranger
-      gnupg
       readline
       ripgrep
       tig
-      tree
       tmux
     ];
 
@@ -108,23 +114,6 @@ in
   programs.nix-index.enable = true;
   nix.package = pkgs.nix;
 
-  system.defaults.NSGlobalDomain.AppleKeyboardUIMode = 3;
-  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
-  system.defaults.NSGlobalDomain.NSNavPanelExpandedStateForSaveMode = true;
-  system.defaults.NSGlobalDomain.NSNavPanelExpandedStateForSaveMode2 = true;
-
-
-  system.defaults.finder.AppleShowAllExtensions = true;
-  system.defaults.finder.QuitMenuItem = true;
-  system.defaults.finder.FXEnableExtensionChangeWarning = false;
-
-  system.defaults.trackpad.Clicking = false;
-  system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
