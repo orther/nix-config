@@ -16,12 +16,12 @@ in
       window_opacity_duration = "0.0";
       window_border = "on";
       window_border_placement = "inset";
-      window_border_width = 6;
+      window_border_width = 3;
       window_border_radius = 10;
       active_window_border_topmost = "off";
       window_topmost = "on";
       window_shadow = "float";
-      active_window_border_color = "0xff5c7e81";
+      active_window_border_color = "0xccff00af";
       normal_window_border_color = "0xff505050";
       insert_window_border_color = "0xffd75f5f";
       active_window_opacity = "1.0";
@@ -32,11 +32,11 @@ in
       mouse_action1 = "move";
       mouse_action2 = "resize";
       layout = "bsp";
-      top_padding = 36;
-      bottom_padding = 10;
-      left_padding = 10;
-      right_padding = 10;
-      window_gap = 10;
+      top_padding = 42;
+      bottom_padding = 16;
+      left_padding = 16;
+      right_padding = 16;
+      window_gap = 16;
     };
 
     extraConfig = ''
@@ -56,8 +56,8 @@ in
   services.spacebar.config = {
     clock_format = "%R";
     space_icon_strip = "   ";
-    text_font = ''"Helvetica Neue:Bold:12.0"'';
-    icon_font = ''"FontAwesome:Regular:12.0"'';
+    text_font = ''"Helvetica Neue:Bold:16.0"'';
+    icon_font = ''"FontAwesome:Regular:16.0"'';
     background_color = "0xff202020";
     foreground_color = "0xffa8a8a8";
     power_icon_strip = " ";
