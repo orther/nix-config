@@ -51,6 +51,12 @@ in
       };
     };
     matchBlocks."github.com" = {
+      identityFile = "${homeDir}/.ssh/id_rsa-arson";
+      extraOptions = {
+        AddKeysToAgent = "yes";
+      };
+    };
+    matchBlocks."*" = {
       identitiesOnly = true;
       ##identityFile = "${homeDir}/.ssh/id_rsa_yubikey.pub";
       identityFile = "${homeDir}/.ssh/id_rsa-arson";
@@ -142,7 +148,7 @@ in
       branch.autosetupmerge = "always";
       push.default = "current";
       hub.protocol = "ssh";
-      github.user = "amarrella";
+      github.user = "orther";
       color.ui = true;
       pull.rebase = true;
       core.commitGraph = true;
