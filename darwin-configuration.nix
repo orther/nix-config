@@ -64,6 +64,7 @@ in
     git
     git-crypt
     # ghc
+    fd
     fzf
     # eksctl
     # gettext

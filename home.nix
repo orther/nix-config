@@ -11,14 +11,13 @@ let
 
 in
 {
-  imports = [
-    ./home/doom-emacs/default.nix
-  ];
+  imports = [ ./home/doom-emacs/default.nix ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.bat.enable = true;
-  home.file.".iterm2_shell_integration.zsh".source = ./home/.iterm2_shell_integration.zsh;
+  home.file.".iterm2_shell_integration.zsh".source =
+    ./home/.iterm2_shell_integration.zsh;
   home.file."${xdgCacheHome}/oh-my-zsh/.keep".text = "";
   home.file."${xdgConfigHome}/git/.keep".text = "";
   ##home.file.".ghci".source = ./home/.ghci;
@@ -31,13 +30,12 @@ in
   };
 
   programs.gpg.enable = true;
-  home.file.".gnupg/gpg-agent.conf".text =
-    ''
-      pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
-      enable-ssh-support
-      default-cache-ttl 86400
-      max-cache-ttl 86400
-    '';
+  home.file.".gnupg/gpg-agent.conf".text = ''
+    pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
+    enable-ssh-support
+    default-cache-ttl 86400
+    max-cache-ttl 86400
+  '';
 
   programs.ssh = {
     enable = true;
@@ -46,15 +44,12 @@ in
       user = "root";
       port = 3022;
       identityFile = "/etc/nix/docker_rsa";
-      extraOptions = {
-        StrictHostKeyChecking = "no";
-      };
+      extraOptions = { StrictHostKeyChecking = "no"; };
     };
     matchBlocks."github.com" = {
+      identitiesOnly = true;
       identityFile = "${homeDir}/.ssh/id_rsa-arson";
-      extraOptions = {
-        AddKeysToAgent = "yes";
-      };
+      extraOptions = { AddKeysToAgent = "yes"; };
     };
     matchBlocks."*" = {
       identitiesOnly = true;
