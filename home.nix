@@ -46,15 +46,46 @@ in
       identityFile = "/etc/nix/docker_rsa";
       extraOptions = { StrictHostKeyChecking = "no"; };
     };
+    matchBlocks."*" = {
+      identitiesOnly = true;
+      ##identityFile = "${homeDir}/.ssh/id_rsa_yubikey.pub";
+      extraOptions = { AddKeysToAgent = "yes"; };
+      identityFile = "${homeDir}/.ssh/id_rsa-arson";
+    };
     matchBlocks."github.com" = {
       identitiesOnly = true;
       identityFile = "${homeDir}/.ssh/id_rsa-arson";
       extraOptions = { AddKeysToAgent = "yes"; };
     };
-    matchBlocks."*" = {
-      identitiesOnly = true;
-      ##identityFile = "${homeDir}/.ssh/id_rsa_yubikey.pub";
-      identityFile = "${homeDir}/.ssh/id_rsa-arson";
+    matchBlocks."aecs.accept1" = {
+      hostname = "18.144.71.44";
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
+    };
+    matchBlocks."aecs.accept2" = {
+      hostname = "54.193.61.61";
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
+    };
+    matchBlocks."aecs.sand1" = {
+      hostname = "13.57.216.67";
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
+    };
+    matchBlocks."aecs.sand2" = {
+      hostname = "52.219.138.246";
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
+    };
+    matchBlocks."aecs.prod1" = {
+      hostname = "13.56.165.165";
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
+    };
+    matchBlocks."aecs.prod2" = {
+      hostname = "52.53.186.65";
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
     };
   };
 
