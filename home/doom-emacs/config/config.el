@@ -74,17 +74,22 @@
 (setq js-indent-level 2
       js2-basic-offset 2)
 
-(setq +set-eslint-checker nil)
-(after! lsp-ui
-  ;; for whatever reason, this was running twice.
-  (setq lsp-ui-sideline-show-hover t)
-  (when (not +set-eslint-checker)
-    (progn
-      (setq +set-eslint-checker t)
-      (flycheck-add-mode 'javascript-eslint 'web-mode)
-      (flycheck-add-next-checker 'lsp-ui  'javascript-eslint)))
-      (when (not flycheck-javascript-eslint-executable)
-        (setq flycheck-javascript-eslint-executable "eslint_d")))
+;; (setq +set-eslint-checker nil)
+;; (after! lsp-ui
+;;   ;; for whatever reason, this was running twice.
+;;   (setq lsp-ui-sideline-show-hover t)
+;;   (when (not +set-eslint-checker)
+;;     (progn
+;;       (setq +set-eslint-checker t)
+;;       (flycheck-add-mode 'javascript-eslint 'web-mode)
+;;       (flycheck-add-next-checker 'lsp-ui  'javascript-eslint)))
+;;       (when (not flycheck-javascript-eslint-executable)
+;;         (setq flycheck-javascript-eslint-executable "eslint_d")))
+
+(setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
+(after! company
+  (setq company-idle-delay 0
+        company-show-numbers t))
 
 (after! web-mode
   (add-hook 'web-mode-hook #'flycheck-mode)

@@ -49,7 +49,11 @@ in
     matchBlocks."*" = {
       identitiesOnly = true;
       ##identityFile = "${homeDir}/.ssh/id_rsa_yubikey.pub";
-      extraOptions = { AddKeysToAgent = "yes"; };
+      extraOptions = {
+        IgnoreUnknown = "UseKeychain";
+        UseKeychain = "yes";
+        AddKeysToAgent = "yes";
+      };
       identityFile = "${homeDir}/.ssh/id_rsa-arson";
     };
     matchBlocks."github.com" = {

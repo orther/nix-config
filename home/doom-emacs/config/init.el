@@ -19,7 +19,9 @@
        ;;japanese
 
        :completion
-       company           ; the ultimate code completion backend
+       (company           ; the ultimate code completion backend
+        +childframe
+        )
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ivy               ; a search engine for love and life
@@ -90,7 +92,11 @@
        (eval +overlay)     ; run code, run (also, repls)
        gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       lsp
+       (lsp
+        +peek
+        ;; +eglot
+        )
+
        macos             ; MacOS-specific commands
        (magit             ; a git porcelain for Emacs
         +forge)
@@ -100,6 +106,7 @@
        ;;prodigy           ; FIXME managing external services & code builders
        rgb               ; creating color strings
        ;; terraform         ; infrastructure as code
+       taskrunner         ;runnable tasks from build systems like make, gradle, npm and the like.
        tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
 
