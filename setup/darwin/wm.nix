@@ -5,7 +5,7 @@ let
 in
 {
   services.yabai = {
-    enable = true;
+    enable = false;
     package = pkgs.yabai;
     enableScriptingAddition = true;
     config = {
@@ -51,7 +51,7 @@ in
     '';
   };
 
-  services.spacebar.enable = true;
+  services.spacebar.enable = false;
   services.spacebar.package = pkgs.spacebar;
   services.spacebar.config = {
     clock_format = "%R";
@@ -65,7 +65,7 @@ in
     clock_icon = "";
   };
 
-  services.skhd.enable = true;
+  services.skhd.enable = false;
   services.skhd.package = pkgs.skhd;
   services.skhd.skhdConfig = let
     ## modMask = "cmd";
@@ -73,12 +73,20 @@ in
     moveMask = "ctrl + cmd";
     myTerminal = "emacsclient -a '' -nc --eval '(peel/vterm)'";
     myEditor = "emacsclient -a '' -nc";
-    myBrowser = "open /Applications/Firefox\ Developer\ Edition.app";
+    myBrowser = "open /Applications/Firefox Developer Edition.app";
     noop = "/dev/null";
     prefix = "${pkgs.yabai}/bin/yabai -m";
-    fstOrSnd = { fst, snd }: domain: "${prefix} ${domain} --focus ${fst} || ${prefix} ${domain} --focus ${snd}";
-    nextOrFirst = fstOrSnd { fst = "next"; snd = "first"; };
-    prevOrLast = fstOrSnd { fst = "prev"; snd = "last"; };
+    fstOrSnd = { fst, snd }:
+    domain:
+      "${prefix} ${domain} --focus ${fst} || ${prefix} ${domain} --focus ${snd}";
+    nextOrFirst = fstOrSnd {
+      fst = "next";
+      snd = "first";
+    };
+    prevOrLast = fstOrSnd {
+      fst = "prev";
+      snd = "last";
+    };
   in
     ''
       # windows ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
@@ -94,23 +102,23 @@ in
       # increase region
       ${modMask} + shift - ${keycodes.LeftBracket}      : ${prefix} window --resize left:-20:0
       ${modMask} + shift - ${keycodes.RightBracket}     : ${prefix} window --resize right:-20:0
-    
+
       ## # spaces ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-      ## # switch 
+      ## # switch
       ## ${modMask} + alt - j                      : ${prevOrLast "space"}
       ## ${modMask} + alt - k                      : ${nextOrFirst "space"}
-      ## # send window 
+      ## # send window
       ## ${modMask} + ${moveMask} - j              : ${prefix} window --space prev
       ## ${modMask} + ${moveMask} - k              : ${prefix} window --space next
       ## # display  ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-      ## # focus 
+      ## # focus
       ## ${modMask} - left                         : ${prevOrLast "display"}
       ## ${modMask} - right                        : ${nextOrFirst "display"}
       ## # send window
       ## ${moveMask} - right                       : ${prefix} window --display prev
       ## ${moveMask} - left                        : ${prefix} window --display next
       ## # apps  ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-      ## ${modMask} - return                       : ${myTerminal} 
+      ## ${modMask} - return                       : ${myTerminal}
       ## ${modMask} + shift - return               : ${myEditor}
       ## ${modMask} - b                            : ${myBrowser}
       ## # reset  ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
