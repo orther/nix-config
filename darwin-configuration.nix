@@ -110,6 +110,9 @@ in
     ripgrep
     tig
     tmux
+    # aspell
+    # aspellDicts.en-us
+    # aspellDicts.en-computers
   ];
 
   fonts.enableFontDir = true;
