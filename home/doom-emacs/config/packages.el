@@ -47,5 +47,5 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 
-(when (featurep! :completion company)
-  (package! company-tabnine))
+;; (when (featurep! :completion company)
+;;   (package! company-tabnine))
