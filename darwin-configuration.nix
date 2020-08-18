@@ -80,6 +80,7 @@ in
     lorri
     nix-prefetch-git
     oh-my-zsh
+    postgresql_12
     python
     pre-commit
     # sbt
