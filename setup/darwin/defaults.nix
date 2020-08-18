@@ -22,6 +22,7 @@
       AppleShowAllExtensions = true;
       FXEnableExtensionChangeWarning = false;
       QuitMenuItem = true;
+      _FXShowPosixPathInTitle = true;
     };
     trackpad = {
       Clicking = true;
