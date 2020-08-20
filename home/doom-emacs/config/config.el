@@ -59,11 +59,11 @@
 ;;       which-key-allow-regexps nil
 ;;       which-key-allow-evil-operators 1)
 
-(after! which-key
-  (setq which-key-idle-delay 0.25
-        which-key-allow-regexps nil
-        which-key-idle-secondary-delay 0))
-;; (setq company-idle-delay 0.1)
+;; (after! which-key
+;;   (setq which-key-idle-delay 0.25
+;;         which-key-allow-regexps nil
+;;         which-key-idle-secondary-delay 0))
+(setq company-idle-delay 0.1)
 
 
 ;; TypeScript config copied from https://github.com/orther/doom-emacs-private/blob/mbp-laptop/config.org#typescript
@@ -88,9 +88,9 @@
 
 ;; ;;; config.el
 ;; (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
-(after! company
-  (setq company-idle-delay 0.1
-        company-show-numbers t))
+;; (after! company
+;;   (setq company-idle-delay 0.1
+;;         company-show-numbers t))
 
 (after! web-mode
   (add-hook 'web-mode-hook #'flycheck-mode)
