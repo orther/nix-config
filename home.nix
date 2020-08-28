@@ -56,6 +56,12 @@ in
       };
       identityFile = "${homeDir}/.ssh/id_rsa-arson";
     };
+    matchBlocks."nas.doom.lan" = {
+      hostname = "nas.doom.lan";
+      port = 2262;
+      user = "root";
+      identityFile = "${homeDir}/.ssh/id_rsa-mbpr";
+    };
     matchBlocks."github.com" = {
       identitiesOnly = true;
       identityFile = "${homeDir}/.ssh/id_rsa-arson";
