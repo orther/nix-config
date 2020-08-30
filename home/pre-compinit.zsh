@@ -21,3 +21,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
+
+# Emacs custom build w/ feature/native-comp
+alias emacs="open /Applications/Emacs.app $1"
+export EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
