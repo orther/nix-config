@@ -6,7 +6,12 @@
 ##     enable = lib.mkEnableOption "Enable the doom-emacs editor";
 ##   };
 
+let
+  ##
+  nixpkgs = import <nixpkgs> {};
+in
 {
+
   ## config = lib.mkIf cfg.enable {
   config = {
     home.packages = with pkgs; [

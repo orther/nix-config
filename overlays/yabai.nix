@@ -1,4 +1,5 @@
-self: super {
+self:
+super {
   yabai = super.yabai.overrideAttrs (
     o: {
       version = "master";

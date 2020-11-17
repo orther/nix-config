@@ -49,3 +49,7 @@
 
 ;; (when (featurep! :completion company)
 ;;   (package! company-tabnine))
+
+
+;; (package! tree-sitter)
+;; (package! tree-sitter-langs)

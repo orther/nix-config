@@ -14,3 +14,22 @@ This is my personal nix configuration and might not work for anyone else but fee
 6. (skipped) `echo -n "your_email@your_provider.tld" > ~/.nixpkgs/local/userEmail.txt`
 7. (skipped) `echo -n "YOUR_SIGNING_KEY" > ~/.nixpkgs/local/signingKey.txt`
 8. `darwin-rebuild switch`
+
+
+## Emacs
+
+Following [this gist](https://gist.github.com/mjlbach/179cf58e1b6f5afcb9a99d4aaf54f549) and using this [custom overlay](https://gist.github.com/mjlbach/179cf58e1b6f5afcb9a99d4aaf54f549) that fixes gccEmacs for macOS.
+
+### Install Emacs
+
+``` sh
+nix-env -iA cachix -f https://cachix.org/api/v1/install
+cachix use mjlbach
+# nix-env -iA nixpkgs.emacsGcc
+```
+
+### Update Emacs
+
+``` sh
+nix-env -iA nixpkgs.emacsGcc
+```

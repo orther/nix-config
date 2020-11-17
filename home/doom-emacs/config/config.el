@@ -30,7 +30,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-moonlight)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -74,17 +74,17 @@
 (setq js-indent-level 2
       js2-basic-offset 2)
 
-(setq +set-eslint-checker nil)
-(after! lsp-ui
-  ;; for whatever reason, this was running twice.
-  (setq lsp-ui-sideline-show-hover t)
-  (when (not +set-eslint-checker)
-    (progn
-      (setq +set-eslint-checker t)
-      (flycheck-add-mode 'javascript-eslint 'web-mode)
-      (flycheck-add-next-checker 'lsp-ui  'javascript-eslint)))
-  (when (not flycheck-javascript-eslint-executable)
-    (setq flycheck-javascript-eslint-executable "eslint_d")))
+;; (setq +set-eslint-checker nil)
+;; (after! lsp-ui
+;;   ;; for whatever reason, this was running twice.
+;;   (setq lsp-ui-sideline-show-hover t)
+;;   (when (not +set-eslint-checker)
+;;     (progn
+;;       (setq +set-eslint-checker t)
+;;       (flycheck-add-mode 'javascript-eslint 'web-mode)
+;;       (flycheck-add-next-checker 'lsp-ui  'javascript-eslint)))
+;;   (when (not flycheck-javascript-eslint-executable)
+;;     (setq flycheck-javascript-eslint-executable "eslint_d")))
 
 ;; ;;; config.el
 ;; (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
@@ -135,3 +135,10 @@
 ;;   (org-journal-file-format "%Y-%m-%d.org")
 ;;   (org-journal-date-format "%A, %d %B %Y"))
 ;; (setq org-journal-enable-agenda-integration t)
+
+;; (use-package! tree-sitter
+;;   :config
+;;   (require 'tree-sitter-langs)
+;;   (global-tree-sitter-mode)
+;;   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+;; ;;;

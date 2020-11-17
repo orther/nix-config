@@ -104,7 +104,13 @@ in
     source ${nix-direnv}/share/nix-direnv/direnvrc
   '';
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    # sessionVariables = {
+    #   EA_EDITOR =
+    #     "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -a '' -c";
+    # };
+  };
 
   programs.zsh = {
     enable = true;
