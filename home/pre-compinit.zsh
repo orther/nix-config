@@ -34,3 +34,9 @@ if [ -f "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient" ]; then
 fi
 ## alias emacs="open /Applications/Emacs.app $1"
 ## export EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
+
+## Added this for idb installed with pip 3.8
+export PATH=$PATH:/Users/brandon/Library/Python/3.8/bin
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
