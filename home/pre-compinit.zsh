@@ -9,7 +9,8 @@ function iterm2_print_user_vars() {
   iterm2_set_user_var AWS_CLUSTER_NAME $(echo $AWS_CLUSTER_NAME)
 }
 
-. $(brew --prefix asdf)/asdf.sh
+# . $(brew --prefix asdf)/asdf.sh
+source /usr/local/opt/asdf/asdf.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 eval "$(direnv hook zsh)"
