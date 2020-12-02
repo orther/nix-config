@@ -142,3 +142,12 @@
 ;;   (global-tree-sitter-mode)
 ;;   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 ;; ;;;
+
+
+(setq auto-mode-alist
+  (append
+    ;; Fastlane config files
+    '(("/\\(?:App\\|Plugin\\|Deliver\\)file\\'" . ruby-mode))
+    auto-mode-alist))
+
+;;; config.el ends here
