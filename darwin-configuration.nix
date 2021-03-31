@@ -78,6 +78,7 @@ in
     # kustomize
     # lastpass-cli
     lorri
+    ngrok-2
     nix-prefetch-git
     oh-my-zsh
     postgresql_12

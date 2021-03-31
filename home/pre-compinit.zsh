@@ -37,7 +37,9 @@ fi
 ## export EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
 
 ## Added this for idb installed with pip 3.8
-export PATH=$PATH:/Users/brandon/Library/Python/3.8/bin
+# export PATH=$PATH:/Users/brandon/Library/Python/3.8/bin
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+source "$HOME/.cargo/env"
